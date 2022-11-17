@@ -1,4 +1,5 @@
 ﻿using Algorithms.Graph.Binary;
+using Algorithms.Graph.BinaryTree;
 
 //var a = new Node<char>('a');
 //var b = new Node<char>('b');
@@ -31,13 +32,13 @@
 
 //		  3
 //		 /  \
-//	   11    4
-//    / \    /\
+//	   11    -12
+//    / \    / \
 //   4   2	1  -1
 // Total Sum = 3 + 11 + 4 + 2 + 4 + 1 + (-1) = 24
 var a = new Node<int>(3);
 var b = new Node<int>(11);
-var c = new Node<int>(4);
+var c = new Node<int>(-12);
 var d = new Node<int>(4);
 var e = new Node<int>(2);
 var f = new Node<int>(1);
@@ -53,9 +54,11 @@ c.Left = g;
 
 //g = null; // check edge case
 
-Console.WriteLine(a.CalculateTreeSum());
-Console.WriteLine(g.CalculateTreeSum());
-Console.WriteLine(a.CalculateTreeSumIterativeDfs());
-Console.WriteLine(g.CalculateTreeSumIterativeDfs());
-Console.WriteLine(a.CalculateTreeSumIterativeBfs());
-Console.WriteLine(g.CalculateTreeSumIterativeBfs());
+//Console.WriteLine(a.CalculateTreeSum());
+//Console.WriteLine(g.CalculateTreeSum());
+//Console.WriteLine(a.CalculateTreeSumIterativeDfs());
+//Console.WriteLine(g.CalculateTreeSumIterativeDfs());
+//Console.WriteLine(a.CalculateTreeSumIterativeBfs());
+//Console.WriteLine(g.CalculateTreeSumIterativeBfs());
+
+Console.WriteLine(a.SearchMin());
