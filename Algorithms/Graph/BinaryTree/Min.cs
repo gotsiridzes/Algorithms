@@ -4,7 +4,7 @@ namespace Algorithms.Graph.BinaryTree;
 
 public static class Min
 {
-	public static int SearchMin(this Node<int> root)
+	public static int SearchMinDfs(this Node<int> root)
 	{
 		if (root is null) return 0;
 		var min = root.Val;
@@ -23,4 +23,25 @@ public static class Min
 
 		return min;
 	}
+
+	public static int SearchMinBfs(this Node<int> root)
+	{
+		if (root is null) return 0;
+		var min = root.Val;
+		var queue = new Queue<Node<int>>();
+		queue.Enqueue(root);
+
+		while (queue.Count > 0)
+		{
+			var current = queue.Dequeue();
+
+			min = current.Val < min ? current.Val : min;
+
+			if (current.Left != null) queue.Enqueue(current.Left);
+			if (current.Right != null) queue.Enqueue(current.Right);
+		}
+
+		return min;
+	}
+
 }

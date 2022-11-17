@@ -61,4 +61,5 @@ c.Left = g;
 //Console.WriteLine(a.CalculateTreeSumIterativeBfs());
 //Console.WriteLine(g.CalculateTreeSumIterativeBfs());
 
-Console.WriteLine(a.SearchMin());
+Console.WriteLine(a.SearchMinDfs());
+Console.WriteLine(a.SearchMinBfs());
