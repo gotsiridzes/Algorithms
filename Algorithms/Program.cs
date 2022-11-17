@@ -51,7 +51,11 @@ b.Right = e;
 c.Right = f;
 c.Left = g;
 
-g = null; // check edge case
+//g = null; // check edge case
 
 Console.WriteLine(a.CalculateTreeSum());
 Console.WriteLine(g.CalculateTreeSum());
+Console.WriteLine(a.CalculateTreeSumIterativeDfs());
+Console.WriteLine(g.CalculateTreeSumIterativeDfs());
+Console.WriteLine(a.CalculateTreeSumIterativeBfs());
+Console.WriteLine(g.CalculateTreeSumIterativeBfs());
