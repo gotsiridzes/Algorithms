@@ -4,14 +4,29 @@ namespace Algorithms.Graph.BinaryTree;
 
 public static class Min
 {
-	public static int SearchMinDfs(this Node<int> root)
+	public static int SearchMinDfsRecursive(this Node<int>? root)
+	{
+		if(root is null ) return 0;
+		var minLeft = root.Left.SearchMinDfsRecursive();
+		var minRight = root.Right.SearchMinDfsRecursive();
+
+		var min = root.Val;
+
+		if (minLeft < min) min = minLeft;
+		if (minRight < min) min = minRight;
+		
+		// return min; // or 
+		return Math.Min(min, Math.Min(minLeft, minRight));
+	}
+	
+	public static int SearchMinDfsIterative(this Node<int> root)
 	{
 		if (root is null) return 0;
 		var min = root.Val;
 		var stack = new Stack<Node<int>>();
 		stack.Push(root);
-		
-		while(stack.Count > 0)
+
+		while (stack.Count > 0)
 		{
 			var current = stack.Pop();
 
@@ -43,5 +58,4 @@ public static class Min
 
 		return min;
 	}
-
 }
