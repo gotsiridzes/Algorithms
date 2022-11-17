@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms.Graph.Binary;
+﻿namespace Algorithms.Graph.Binary;
 
 public static class Includes
 {
