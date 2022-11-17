@@ -11,7 +11,7 @@ a.Left = c;			//		 a
 a.Right = b;		//		/\
 b.Right = f;		//	   c  b
 c.Left = d;			//    /\   \
-c.Right = e;		//   d  e   f
+c.Right = e;        //   d  e   f
 
 // var dfsIter = a.PerformDfsIterative();
 // dfsIter.Print();
@@ -19,5 +19,11 @@ c.Right = e;		//   d  e   f
 // var dfsRecur = a.PerformDfsRecursive();
 // dfsRecur.Print();
 
-var bfs = a.PerformBfs();
-bfs.Print();
+//var bfs = a.PerformBfs();
+//bfs.Print();
+
+var argsToCheck = new List<char> { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
+foreach (var item in argsToCheck)
+{
+	Console.Write($"{item} - IsAvailable ({a.IsAvailable(item)})\tIsAvailableBfsImpl({a.IsAvailableBfsImpl(item)})\n");
+}
