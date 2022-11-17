@@ -45,7 +45,7 @@ public static class Dfs
 	public static List<Node<T>> PerformDfsRecursive<T>(this Node<T>? root)
 	{
 		if (root is null)
-			return new() {};
+			return new() { };
 
 		var result = new List<Node<T>>();
 

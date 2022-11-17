@@ -4,7 +4,7 @@ public static class TreeSum
 {
 	public static int CalculateTreeSum(this Node<int>? root)
 	{
-		if(root == null) return 0;
+		if (root == null) return 0;
 
 		return root.Val + CalculateTreeSum(root.Left) + CalculateTreeSum(root.Right);
 	}
@@ -14,15 +14,15 @@ public static class TreeSum
 		if (root == null) return 0;
 
 		int sum = 0;
-		
+
 		var stack = new Stack<Node<int>>();
 		stack.Push(root);
-		
+
 		while (stack.Count > 0)
 		{
 			var current = stack.Pop();
 
-			sum +=  current.Val;
+			sum += current.Val;
 
 			if (current.Left != null) stack.Push(current.Left);
 			if (current.Right != null) stack.Push(current.Right);

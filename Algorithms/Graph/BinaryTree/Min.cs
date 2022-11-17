@@ -6,7 +6,7 @@ public static class Min
 {
 	public static int SearchMinDfsRecursive(this Node<int>? root)
 	{
-		if(root is null ) return 0;
+		if (root is null) return 0;
 		var minLeft = root.Left.SearchMinDfsRecursive();
 		var minRight = root.Right.SearchMinDfsRecursive();
 
@@ -14,11 +14,11 @@ public static class Min
 
 		if (minLeft < min) min = minLeft;
 		if (minRight < min) min = minRight;
-		
+
 		// return min; // or 
 		return Math.Min(min, Math.Min(minLeft, minRight));
 	}
-	
+
 	public static int SearchMinDfsIterative(this Node<int> root)
 	{
 		if (root is null) return 0;

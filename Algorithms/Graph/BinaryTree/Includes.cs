@@ -29,9 +29,9 @@ public static class Includes
 		{
 			var current = queue.Dequeue();
 			if (current.Val!.Equals(target)) return true;
-			
-			if(current.Left != null) queue.Enqueue(current.Left);
-			if(current.Right!= null) queue.Enqueue(current.Right);
+
+			if (current.Left != null) queue.Enqueue(current.Left);
+			if (current.Right != null) queue.Enqueue(current.Right);
 		}
 
 		return false;
