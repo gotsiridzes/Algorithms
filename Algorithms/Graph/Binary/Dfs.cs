@@ -28,26 +28,34 @@ public static class Dfs
 		stack.Push(root);
 		while (stack.Count > 0)
 		{
-			var current = stack.Pop(); // or stack.peek
-
-			if(current.Left != null)
-			{
-				stack.Push((Node<T>)current.Left);
-			}
-
-			if(current.Right != null)
-			{
-				stack.Push(((Node<T>)current.Right));
-			}
+			var current = stack.Pop();
 
 			result.Add(current);
-		}
 
+			if (current.Left != null)
+				stack.Push(current.Left);
+
+			if (current.Right != null)
+				stack.Push(current.Right);
+		}
 
 		return result;
 	}
 
-	//public static List<Node<T>> DfsRecursive<T>(this Node<T> root)
-	//{
-	//}
+	public static List<Node<T>> PerformDfsRecursive<T>(this Node<T>? root)
+	{
+		if (root is null)
+			return new() {};
+
+		var result = new List<Node<T>>();
+
+		var leftNodes = PerformDfsRecursive(root.Left);
+		var rightNodes = PerformDfsRecursive(root.Right);
+
+		result.Add(root);
+		result.AddRange(leftNodes);
+		result.AddRange(rightNodes);
+
+		return result;
+	}
 }

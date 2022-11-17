@@ -7,11 +7,14 @@ var d = new Node<char>('d');
 var e = new Node<char>('e');
 var f = new Node<char>('f');
 
-a.Left = c;
-a.Right = b;
-b.Right = f;
-c.Left = d;
-c.Right = e;
+a.Left = c;			//		 a
+a.Right = b;		//		/\
+b.Right = f;		//	   c  b
+c.Left = d;			//    /\   \
+c.Right = e;		//   d  e   f
 
 var result = a.PerformDfsIterative();
+result.Print();
+
+result = a.PerformDfsRecursive();
 result.Print();
