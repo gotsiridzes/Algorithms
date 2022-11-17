@@ -13,8 +13,11 @@ b.Right = f;		//	   c  b
 c.Left = d;			//    /\   \
 c.Right = e;		//   d  e   f
 
-var result = a.PerformDfsIterative();
-result.Print();
+// var dfsIter = a.PerformDfsIterative();
+// dfsIter.Print();
 
-result = a.PerformDfsRecursive();
-result.Print();
+// var dfsRecur = a.PerformDfsRecursive();
+// dfsRecur.Print();
+
+var bfs = a.PerformBfs();
+bfs.Print();
